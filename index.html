@@ -1,0 +1,2694 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>uShip API | API Reference</title>
+    <link rel="stylesheet" href="stylesheets/foundation.min.css" />
+    <link rel="stylesheet" href="stylesheets/spectacle.min.css" />
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- <script src="javascripts/foundation.js"></script> -->
+    <script src="javascripts/spectacle.min.js"></script>
+  </head>
+  <body id="spectacle">
+    <div id="page" class="drawer-layout drawer-slide-right-large">
+      <div id="sidebar">
+        <button class="close-button" aria-label="Close menu" type="button" data-drawer-close>
+          <span aria-hidden="true">×</span>
+        </button>
+        <nav id="nav" role="navigation">
+          <h5>Topics</h5>
+          <a href="#introduction">Introduction</a>
+          <a href="#authentication">Authentication</a>
+          <h5>Paths</h5>
+          <!-- <section>
+                <a href="#path--v2-search">/v2/search</a>
+                <ul> -->
+          <!-- <li> -->
+          <a href="#operation--v2-search-post"> Posts the specified search input and retrieve a search result (function) </a>
+          <!-- </li> -->
+          <!-- </ul>
+              </section> -->
+          <h5>Schema Definitions</h5>
+          <a href="#definition-SearchCriteriaModel"> SearchCriteriaModel </a>
+          <a href="#definition-SearchSortCriteria"> SearchSortCriteria </a>
+          <a href="#definition-Location"> Location </a>
+          <a href="#definition-PriceCriteria"> PriceCriteria </a>
+          <a href="#definition-Address"> Address </a>
+          <a href="#definition-Contact"> Contact </a>
+          <a href="#definition-ListingSummaryModelCollectionResult"> ListingSummaryModelCollectionResult </a>
+          <a href="#definition-ListingSummaryModel"> ListingSummaryModel </a>
+          <a href="#definition-Link"> Link </a>
+          <a href="#definition-EnumModel"> EnumModel </a>
+          <a href="#definition-DistanceModel"> DistanceModel </a>
+          <a href="#definition-RouteModel"> RouteModel </a>
+          <a href="#definition-RoutePointModel"> RoutePointModel </a>
+          <a href="#definition-AddressModel"> AddressModel </a>
+          <a href="#definition-RoutePointContactModel"> RoutePointContactModel </a>
+          <a href="#definition-TimeFrameModel"> TimeFrameModel </a>
+          <a href="#definition-TerminalModel"> TerminalModel </a>
+          <a href="#definition-FormattedAttributeModel"> FormattedAttributeModel </a>
+        </nav>
+      </div>
+      <div id="docs" class="row collapse expanded drawer" data-drawer>
+        <button class="floating-menu-icon" type="button" data-drawer-slide="right">
+          <span class="hamburger"></span>
+        </button>
+        <div class="example-box doc-content"></div>
+        <article>
+          <h1 class="doc-title">uShip API
+            <span>API Reference</span>
+          </h1>
+          <div id="introduction" data-traverse-target="introduction">
+            <div class="doc-row">
+              <div class="doc-copy">
+                <p>undefined</p>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>API Endpoint</h5>
+                  <!-- <div class="hljs"> --><pre><code>https://api.uship.com</code></pre>
+                  <!-- </div> -->
+                  <h5>Schemes:
+                    <span>https</span>
+                  </h5>
+                  <h5>Version:
+                    <span>v2</span>
+                  </h5>
+                </section>
+              </div>
+            </div>
+          </div>
+          <!-- <h1 id="security" data-traverse-target="security">Security</h1> -->
+          <h1 id="authentication" data-traverse-target="authentication">Authentication</h1>
+          <div id="security-definition-OAuth2" class="panel">
+            <div class="doc-row">
+              <div class="doc-copy">
+                <h3 class="security-definition-title">
+                  <span class="security-name">OAuth2</span>
+                  <span class="swagger-security-definition-oauth2"></span>
+                </h3>
+                <section class="swagger-security-definition-properties">
+                  <div class="prop-row security-definition-property">
+                    <div class="prop-name">
+                      <div class="prop-title security-definition-property-name">type</div>
+                    </div>
+                    <div class="prop-value security-definition-property-type"> oauth2 </div>
+                  </div>
+                  <div class="prop-row security-definition-property">
+                    <div class="prop-name">
+                      <div class="prop-title security-definition-property-name">flow</div>
+                    </div>
+                    <div class="prop-value security-definition-property-type"> application </div>
+                  </div>
+                  <div class="prop-row security-definition-property">
+                    <div class="prop-name">
+                      <div class="prop-title security-definition-property-name">tokenUrl</div>
+                    </div>
+                    <div class="prop-value security-definition-property-type"> https://api.uship.com/oauth/token </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+          <h1>Paths</h1>
+          <span id="path--v2-search"></span>
+          <div id="operation--v2-search-post" class="operation panel" data-traverse-target="operation--v2-search-post">
+            <!-- <section class="operation-tags row"> -->
+            <!-- <div class="doc-copy"> -->
+            <div class="operation-tags">
+              <a class="label" href="#tag-Search">Search</a>
+              <!---->
+            </div>
+            <!-- </div> -->
+            <!-- </section> -->
+            <h2 class="operation-title">
+              <span class="operation-summary">Posts the specified search input and retrieve a search result (function)</span>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-operation-path">
+                  <span class="operation-method">POST</span>
+                  <span class="operation-path">/v2/search</span>
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-request-body">
+                  <div class="prop-row">
+                    <div class="prop-name">
+                      <div class="swagger-request-model">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/SearchCriteriaModel">SearchCriteriaModel</a>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="prop-value columns small-6">
+                      <!-- <div class="swagger-request-description"> -->
+                      <p>The search input.</p>
+                      <!-- </div> -->
+                    </div>
+                  </div>
+                </section>
+                <section class="swagger-request-params">
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">pagingOptions.pageIndex:
+                        <span class="prop-type">
+                          <span class="json-property-type">integer</span>
+                          <span class="json-property-format">(int32)</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Gets or sets the page index for where to start.</p>
+                    </div>
+                  </div>
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">pagingOptions.pageSize:
+                        <span class="prop-type">
+                          <span class="json-property-type">integer</span>
+                          <span class="json-property-format">(int32)</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
+                      <div class="prop-subtitle"> in query </div>
+                    </div>
+                    <div class="prop-value">
+                      <p>Gets or sets the size of the page.</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Request Content-Types:
+                    <span>application/json</span>
+                  </h5>
+                  <h5>Request Example</h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;legacySearchId&quot;</span>: <span class="hljs-string">&quot;integer (int32)&quot;</span>,
+  <span class="hljs-attr">&quot;description&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;commodities&quot;</span>: [
+    <span class="hljs-string">&quot;string&quot;</span>
+  ],
+  <span class="hljs-attr">&quot;trailerTypes&quot;</span>: [
+    <span class="hljs-string">&quot;string&quot;</span>
+  ],
+  <span class="hljs-attr">&quot;origin&quot;</span>: {
+    <span class="hljs-attr">&quot;address&quot;</span>: {
+      <span class="hljs-attr">&quot;streetAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;alternateStreetAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;formattedAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;city&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;administrativeDivision&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;administrativeDivisionCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;administrativeDivisionId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;postalCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
+      <span class="hljs-attr">&quot;countryId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;countryLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    },
+    <span class="hljs-attr">&quot;contact&quot;</span>: {
+      <span class="hljs-attr">&quot;companyName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;contactName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;phoneNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;phoneNumber2&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;faxNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    }
+  },
+  <span class="hljs-attr">&quot;prices&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;pricingFormat&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;min&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
+      <span class="hljs-attr">&quot;max&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;destination&quot;</span>: {
+    <span class="hljs-attr">&quot;address&quot;</span>: {
+      <span class="hljs-attr">&quot;streetAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;alternateStreetAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;formattedAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;city&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;administrativeDivision&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;administrativeDivisionCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;administrativeDivisionId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;postalCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
+      <span class="hljs-attr">&quot;countryId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;countryLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    },
+    <span class="hljs-attr">&quot;contact&quot;</span>: {
+      <span class="hljs-attr">&quot;companyName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;contactName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;phoneNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;phoneNumber2&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;faxNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    }
+  },
+  <span class="hljs-attr">&quot;distanceFromRoute&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
+  <span class="hljs-attr">&quot;sort&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;by&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;direction&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;pricingFormat&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;listingStatus&quot;</span>: <span class="hljs-string">&quot;array&quot;</span>
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-responses">
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">200 OK</div>
+                      <div class="prop-ref">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/ListingSummaryModelCollectionResult">ListingSummaryModelCollectionResult</a>
+                        </span>
+                      </div>
+                      <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
+                    </div>
+                    <div class="prop-value">
+                      <p>OK</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <h5>Response Content-Types:
+                  <span>application/json</span>
+                </h5>
+                <section>
+                  <h5>Response Example
+                    <span>(200 OK)</span>
+                  </h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;totalCount&quot;</span>: <span class="hljs-string">&quot;integer (int32)&quot;</span>,
+  <span class="hljs-attr">&quot;items&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;listingId&quot;</span>: <span class="hljs-string">&quot;integer (int32)&quot;</span>,
+      <span class="hljs-attr">&quot;title&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;imageUrl&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;isDefaultImage&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+      <span class="hljs-attr">&quot;route&quot;</span>: {
+        <span class="hljs-attr">&quot;distance&quot;</span>: {
+          <span class="hljs-attr">&quot;kilometers&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
+          <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+        },
+        <span class="hljs-attr">&quot;items&quot;</span>: [
+          {
+            <span class="hljs-attr">&quot;address&quot;</span>: {
+              <span class="hljs-attr">&quot;streetAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;alternateStreetAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;majorMunicipality&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;postalCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;stateProvince&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;stateProvinceLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;countryLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
+              <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
+              <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;shortLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;type&quot;</span>: {
+                <span class="hljs-attr">&quot;value&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+                <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+                <span class="hljs-attr">&quot;shortLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+              }
+            },
+            <span class="hljs-attr">&quot;contact&quot;</span>: {
+              <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;companyName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;phoneNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;altPhoneNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;firstName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+            },
+            <span class="hljs-attr">&quot;timeFrame&quot;</span>: {
+              <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;shortLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;earliestArrival&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
+              <span class="hljs-attr">&quot;latestArrival&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
+              <span class="hljs-attr">&quot;localEarliestArrival&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
+              <span class="hljs-attr">&quot;localLatestArrival&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
+              <span class="hljs-attr">&quot;timeFrameType&quot;</span>: {
+                <span class="hljs-attr">&quot;value&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+                <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+                <span class="hljs-attr">&quot;shortLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+              },
+              <span class="hljs-attr">&quot;timeZone&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+            },
+            <span class="hljs-attr">&quot;terminal&quot;</span>: {
+              <span class="hljs-attr">&quot;phoneNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;city&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;state&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;postalCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+            },
+            <span class="hljs-attr">&quot;attributes&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+            <span class="hljs-attr">&quot;accessorials&quot;</span>: [
+              {
+                <span class="hljs-attr">&quot;value&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+                <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+                <span class="hljs-attr">&quot;shortLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+              }
+            ]
+          }
+        ]
+      },
+      <span class="hljs-attr">&quot;expiresOn&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
+      <span class="hljs-attr">&quot;commodity&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;parentCommodity&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;topLevelCommodity&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;activeBidsPlaced&quot;</span>: <span class="hljs-string">&quot;integer (int32)&quot;</span>,
+      <span class="hljs-attr">&quot;totalBidsPlaced&quot;</span>: <span class="hljs-string">&quot;integer (int32)&quot;</span>,
+      <span class="hljs-attr">&quot;totalShipments&quot;</span>: <span class="hljs-string">&quot;integer (int32)&quot;</span>,
+      <span class="hljs-attr">&quot;isAuction&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+      <span class="hljs-attr">&quot;isDutchAuction&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+      <span class="hljs-attr">&quot;isCharitable&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+      <span class="hljs-attr">&quot;isBrokered&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+      <span class="hljs-attr">&quot;isReadyForPickup&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+      <span class="hljs-attr">&quot;distance&quot;</span>: {
+        <span class="hljs-attr">&quot;kilometers&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
+        <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+      },
+      <span class="hljs-attr">&quot;isWatched&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+      <span class="hljs-attr">&quot;hasCarrierQualifications&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+      <span class="hljs-attr">&quot;privateNetwork&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
+          <h1>Schema Definitions</h1>
+          <div id="definition-SearchCriteriaModel" class="definition panel" data-traverse-target="definition-SearchCriteriaModel">
+            <h2 class="panel-title">
+              <a name="/definitions/SearchCriteriaModel"></a>SearchCriteriaModel: object
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <span class="json-property-range" title="Value limits"></span>
+              
+              
+              </span> -->
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>Example of an input to search</p>
+                </section>
+                <section class="json-schema-properties">
+                  <dl>
+                    <dt data-property-name="legacySearchId" class="has-description">
+                      <span class="json-property-name">legacySearchId:</span>
+                      <span class="json-property-type">integer</span>
+                      <span class="json-property-format">(int32)</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Gets or sets the legacy search id used for querying obsolete search queries using the old system</p>
+                    </dd>
+                    <dt data-property-name="description" class="has-description">
+                      <span class="json-property-name">description:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Free text describing the listing</p>
+                    </dd>
+                    <dt data-property-name="commodities" class="has-description">
+                      <span class="json-property-name">commodities:</span>
+                      <span class="json-property-type">string[]</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>The values that the listing commodity can be</p>
+                    </dd>
+                    <dt class="json-inner-schema">
+                      <section class="json-schema-array-items">
+                        <span class="json-property-type">string</span>
+                        <span class="json-property-range" title="Value limits"></span>
+                        <div class="json-inner-schema"> </div>
+                      </section>
+                    </dt>
+                    <dt data-property-name="trailerTypes" class="has-description">
+                      <span class="json-property-name">trailerTypes:</span>
+                      <span class="json-property-type">string[]</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>The types that the trailer can be</p>
+                    </dd>
+                    <dt class="json-inner-schema">
+                      <section class="json-schema-array-items">
+                        <span class="json-property-type">string</span>
+                        <span class="json-property-range" title="Value limits"></span>
+                        <div class="json-inner-schema"> </div>
+                      </section>
+                    </dt>
+                    <dt data-property-name="origin" class="has-description">
+                      <span class="json-property-name">origin:</span>
+                      <span class="json-property-type">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/Location">Location</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>The origin</p>
+                    </dd>
+                    <dt data-property-name="prices">
+                      <span class="json-property-name">prices:</span>
+                      <span class="json-property-type">
+                        <span class="json-schema-ref-array">
+                          <a class="json-schema-ref" href="#/definitions/PriceCriteria">PriceCriteria</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dt class="json-inner-schema">
+                      <section class="json-schema-array-items">
+                        <span class="json-property-type">
+                          <span class="">
+                            <a class="json-schema-ref" href="#/definitions/PriceCriteria">PriceCriteria</a>
+                          </span>
+                        </span>
+                        <span class="json-property-range" title="Value limits"></span>
+                        <div class="json-inner-schema"> </div>
+                      </section>
+                    </dt>
+                    <dt data-property-name="destination" class="has-description">
+                      <span class="json-property-name">destination:</span>
+                      <span class="json-property-type">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/Location">Location</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>The destination</p>
+                    </dd>
+                    <dt data-property-name="distanceFromRoute" class="has-description">
+                      <span class="json-property-name">distanceFromRoute:</span>
+                      <span class="json-property-type">number</span>
+                      <span class="json-property-format">(double)</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>For along a route searches, how far can a shipment be from the route</p>
+                    </dd>
+                    <dt data-property-name="sort" class="has-description">
+                      <span class="json-property-name">sort:</span>
+                      <span class="json-property-type">
+                        <span class="json-schema-ref-array">
+                          <a class="json-schema-ref" href="#/definitions/SearchSortCriteria">SearchSortCriteria</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Sorting criteria for the search.</p>
+                    </dd>
+                    <dt class="json-inner-schema">
+                      <section class="json-schema-array-items">
+                        <span class="json-property-type">
+                          <span class="">
+                            <a class="json-schema-ref" href="#/definitions/SearchSortCriteria">SearchSortCriteria</a>
+                          </span>
+                        </span>
+                        <span class="json-property-range" title="Value limits"></span>
+                        <div class="json-inner-schema"> </div>
+                      </section>
+                    </dt>
+                    <dt data-property-name="pricingFormat" class="has-description">
+                      <span class="json-property-name">pricingFormat:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>The auction type</p>
+                    </dd>
+                    <dt data-property-name="listingStatus" class="has-description">
+                      <span class="json-property-name">listingStatus:</span>
+                      <span class="json-property-type">array</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>The listing statuses to be returned</p>
+                    </dd>
+                  </dl>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;legacySearchId&quot;</span>: <span class="hljs-string">&quot;integer (int32)&quot;</span>,
+  <span class="hljs-attr">&quot;description&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;commodities&quot;</span>: [
+    <span class="hljs-string">&quot;string&quot;</span>
+  ],
+  <span class="hljs-attr">&quot;trailerTypes&quot;</span>: [
+    <span class="hljs-string">&quot;string&quot;</span>
+  ],
+  <span class="hljs-attr">&quot;origin&quot;</span>: {
+    <span class="hljs-attr">&quot;address&quot;</span>: {
+      <span class="hljs-attr">&quot;streetAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;alternateStreetAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;formattedAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;city&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;administrativeDivision&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;administrativeDivisionCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;administrativeDivisionId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;postalCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
+      <span class="hljs-attr">&quot;countryId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;countryLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    },
+    <span class="hljs-attr">&quot;contact&quot;</span>: {
+      <span class="hljs-attr">&quot;companyName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;contactName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;phoneNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;phoneNumber2&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;faxNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    }
+  },
+  <span class="hljs-attr">&quot;prices&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;pricingFormat&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;min&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
+      <span class="hljs-attr">&quot;max&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;destination&quot;</span>: {
+    <span class="hljs-attr">&quot;address&quot;</span>: {
+      <span class="hljs-attr">&quot;streetAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;alternateStreetAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;formattedAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;city&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;administrativeDivision&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;administrativeDivisionCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;administrativeDivisionId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;postalCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
+      <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
+      <span class="hljs-attr">&quot;countryId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;countryLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    },
+    <span class="hljs-attr">&quot;contact&quot;</span>: {
+      <span class="hljs-attr">&quot;companyName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;contactName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;phoneNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;phoneNumber2&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;faxNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    }
+  },
+  <span class="hljs-attr">&quot;distanceFromRoute&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
+  <span class="hljs-attr">&quot;sort&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;by&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;direction&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    }
+  ],
+  <span class="hljs-attr">&quot;pricingFormat&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;listingStatus&quot;</span>: <span class="hljs-string">&quot;array&quot;</span>
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-SearchSortCriteria" class="definition panel" data-traverse-target="definition-SearchSortCriteria">
+            <h2 class="panel-title">
+              <a name="/definitions/SearchSortCriteria"></a>SearchSortCriteria: object
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <span class="json-property-range" title="Value limits"></span>
+              
+              
+              </span> -->
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-properties">
+                  <dl>
+                    <dt data-property-name="by">
+                      <span class="json-property-name">by:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dt data-property-name="direction">
+                      <span class="json-property-name">direction:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                  </dl>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;by&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;direction&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-Location" class="definition panel" data-traverse-target="definition-Location">
+            <h2 class="panel-title">
+              <a name="/definitions/Location"></a>Location: object
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <span class="json-property-range" title="Value limits"></span>
+              
+              
+              </span> -->
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-properties">
+                  <dl>
+                    <dt data-property-name="address">
+                      <span class="json-property-name">address:</span>
+                      <span class="json-property-type">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/Address">Address</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt data-property-name="contact">
+                      <span class="json-property-name">contact:</span>
+                      <span class="json-property-type">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/Contact">Contact</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                  </dl>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;address&quot;</span>: {
+    <span class="hljs-attr">&quot;streetAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;alternateStreetAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;formattedAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;city&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;administrativeDivision&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;administrativeDivisionCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;administrativeDivisionId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;postalCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
+    <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
+    <span class="hljs-attr">&quot;countryId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;countryLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  },
+  <span class="hljs-attr">&quot;contact&quot;</span>: {
+    <span class="hljs-attr">&quot;companyName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;contactName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;phoneNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;phoneNumber2&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;faxNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  }
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-PriceCriteria" class="definition panel" data-traverse-target="definition-PriceCriteria">
+            <h2 class="panel-title">
+              <a name="/definitions/PriceCriteria"></a>PriceCriteria: object
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <span class="json-property-range" title="Value limits"></span>
+              
+              
+              </span> -->
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-properties">
+                  <dl>
+                    <dt data-property-name="pricingFormat">
+                      <span class="json-property-name">pricingFormat:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dt data-property-name="min">
+                      <span class="json-property-name">min:</span>
+                      <span class="json-property-type">number</span>
+                      <span class="json-property-format">(double)</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dt data-property-name="max">
+                      <span class="json-property-name">max:</span>
+                      <span class="json-property-type">number</span>
+                      <span class="json-property-format">(double)</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                  </dl>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;pricingFormat&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;min&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
+  <span class="hljs-attr">&quot;max&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-Address" class="definition panel" data-traverse-target="definition-Address">
+            <h2 class="panel-title">
+              <a name="/definitions/Address"></a>Address: object
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <span class="json-property-range" title="Value limits"></span>
+              
+              
+              </span> -->
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>This is the DTO for address objects received and sent via API calls. PostalCode and CountryCode are required.</p>
+                </section>
+                <section class="json-schema-properties">
+                  <dl>
+                    <dt data-property-name="streetAddress" class="has-description">
+                      <span class="json-property-name">streetAddress:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>Optional. Street Address - Address Line 1</p>
+                    </dd>
+                    <dt data-property-name="alternateStreetAddress" class="has-description">
+                      <span class="json-property-name">alternateStreetAddress:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>Optional. AlternateStreetAddress - Address Line 2</p>
+                    </dd>
+                    <dt data-property-name="formattedAddress" class="has-description">
+                      <span class="json-property-name">formattedAddress:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>Optional. FormattedStreetAddress to prefill google places inputs. This is intended for internal use only and will not be documented on our external API.</p>
+                    </dd>
+                    <dt data-property-name="city" class="has-description">
+                      <span class="json-property-name">city:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>Optional. Town / City: must be full name</p>
+                    </dd>
+                    <dt data-property-name="administrativeDivision" class="has-description">
+                      <span class="json-property-name">administrativeDivision:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>Optional. State, province or region name: Must be full name</p>
+                    </dd>
+                    <dt data-property-name="administrativeDivisionCode" class="has-description">
+                      <span class="json-property-name">administrativeDivisionCode:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>Optional. State, province or region name: Codes only</p>
+                    </dd>
+                    <dt data-property-name="administrativeDivisionId" class="has-description">
+                      <span class="json-property-name">administrativeDivisionId:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>Optional. State, province or region name: Id</p>
+                    </dd>
+                    <dt data-property-name="postalCode" class="has-description">
+                      <span class="json-property-name">postalCode:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>Required. The zip code, postal code, etc..</p>
+                    </dd>
+                    <dt data-property-name="latitude" class="has-description">
+                      <span class="json-property-name">latitude:</span>
+                      <span class="json-property-type">number</span>
+                      <span class="json-property-format">(double)</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>Optional. Latitude</p>
+                    </dd>
+                    <dt data-property-name="longitude" class="has-description">
+                      <span class="json-property-name">longitude:</span>
+                      <span class="json-property-type">number</span>
+                      <span class="json-property-format">(double)</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>Optional. Longitude</p>
+                    </dd>
+                    <dt data-property-name="countryId" class="has-description">
+                      <span class="json-property-name">countryId:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>Required. The country Id per uShip Database</p>
+                    </dd>
+                    <dt data-property-name="countryCode" class="has-description">
+                      <span class="json-property-name">countryCode:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>Required. Country: 2 letter ISO code. For example: US, DE</p>
+                    </dd>
+                    <dt data-property-name="countryLabel" class="has-description">
+                      <span class="json-property-name">countryLabel:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>Optional. Fully qualified country label. For example: United States</p>
+                    </dd>
+                  </dl>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;streetAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;alternateStreetAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;formattedAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;city&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;administrativeDivision&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;administrativeDivisionCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;administrativeDivisionId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;postalCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
+  <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
+  <span class="hljs-attr">&quot;countryId&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;countryCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;countryLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-Contact" class="definition panel" data-traverse-target="definition-Contact">
+            <h2 class="panel-title">
+              <a name="/definitions/Contact"></a>Contact: object
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <span class="json-property-range" title="Value limits"></span>
+              
+              
+              </span> -->
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-properties">
+                  <dl>
+                    <dt data-property-name="companyName">
+                      <span class="json-property-name">companyName:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt data-property-name="contactName">
+                      <span class="json-property-name">contactName:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt data-property-name="phoneNumber">
+                      <span class="json-property-name">phoneNumber:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt data-property-name="phoneNumber2">
+                      <span class="json-property-name">phoneNumber2:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt data-property-name="email">
+                      <span class="json-property-name">email:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt data-property-name="faxNumber">
+                      <span class="json-property-name">faxNumber:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                  </dl>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;companyName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;contactName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;phoneNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;phoneNumber2&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;faxNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-ListingSummaryModelCollectionResult" class="definition panel" data-traverse-target="definition-ListingSummaryModelCollectionResult">
+            <h2 class="panel-title">
+              <a name="/definitions/ListingSummaryModelCollectionResult"></a>ListingSummaryModelCollectionResult: object
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <span class="json-property-range" title="Value limits"></span>
+              
+              
+              </span> -->
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>A collection of multiple items retrieved from a single API resource</p>
+                </section>
+                <section class="json-schema-properties">
+                  <dl>
+                    <dt data-property-name="totalCount" class="has-description">
+                      <span class="json-property-name">totalCount:</span>
+                      <span class="json-property-type">integer</span>
+                      <span class="json-property-format">(int32)</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>The total count of items that exist for the resource requested</p>
+                    </dd>
+                    <dt data-property-name="items" class="has-description">
+                      <span class="json-property-name">items:</span>
+                      <span class="json-property-type">
+                        <span class="json-schema-ref-array">
+                          <a class="json-schema-ref" href="#/definitions/ListingSummaryModel">ListingSummaryModel</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>The paged collection of items as requested</p>
+                    </dd>
+                    <dt class="json-inner-schema">
+                      <section class="json-schema-array-items">
+                        <span class="json-property-type">
+                          <span class="">
+                            <a class="json-schema-ref" href="#/definitions/ListingSummaryModel">ListingSummaryModel</a>
+                          </span>
+                        </span>
+                        <span class="json-property-range" title="Value limits"></span>
+                        <div class="json-inner-schema"> </div>
+                      </section>
+                    </dt>
+                  </dl>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;totalCount&quot;</span>: <span class="hljs-string">&quot;integer (int32)&quot;</span>,
+  <span class="hljs-attr">&quot;items&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;listingId&quot;</span>: <span class="hljs-string">&quot;integer (int32)&quot;</span>,
+      <span class="hljs-attr">&quot;title&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;imageUrl&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;isDefaultImage&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+      <span class="hljs-attr">&quot;route&quot;</span>: {
+        <span class="hljs-attr">&quot;distance&quot;</span>: {
+          <span class="hljs-attr">&quot;kilometers&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
+          <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+        },
+        <span class="hljs-attr">&quot;items&quot;</span>: [
+          {
+            <span class="hljs-attr">&quot;address&quot;</span>: {
+              <span class="hljs-attr">&quot;streetAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;alternateStreetAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;majorMunicipality&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;postalCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;stateProvince&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;stateProvinceLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;countryLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
+              <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
+              <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;shortLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;type&quot;</span>: {
+                <span class="hljs-attr">&quot;value&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+                <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+                <span class="hljs-attr">&quot;shortLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+              }
+            },
+            <span class="hljs-attr">&quot;contact&quot;</span>: {
+              <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;companyName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;phoneNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;altPhoneNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;firstName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+            },
+            <span class="hljs-attr">&quot;timeFrame&quot;</span>: {
+              <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;shortLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;earliestArrival&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
+              <span class="hljs-attr">&quot;latestArrival&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
+              <span class="hljs-attr">&quot;localEarliestArrival&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
+              <span class="hljs-attr">&quot;localLatestArrival&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
+              <span class="hljs-attr">&quot;timeFrameType&quot;</span>: {
+                <span class="hljs-attr">&quot;value&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+                <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+                <span class="hljs-attr">&quot;shortLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+              },
+              <span class="hljs-attr">&quot;timeZone&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+            },
+            <span class="hljs-attr">&quot;terminal&quot;</span>: {
+              <span class="hljs-attr">&quot;phoneNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;city&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;state&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+              <span class="hljs-attr">&quot;postalCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+            },
+            <span class="hljs-attr">&quot;attributes&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+            <span class="hljs-attr">&quot;accessorials&quot;</span>: [
+              {
+                <span class="hljs-attr">&quot;value&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+                <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+                <span class="hljs-attr">&quot;shortLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+              }
+            ]
+          }
+        ]
+      },
+      <span class="hljs-attr">&quot;expiresOn&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
+      <span class="hljs-attr">&quot;commodity&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;parentCommodity&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;topLevelCommodity&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;activeBidsPlaced&quot;</span>: <span class="hljs-string">&quot;integer (int32)&quot;</span>,
+      <span class="hljs-attr">&quot;totalBidsPlaced&quot;</span>: <span class="hljs-string">&quot;integer (int32)&quot;</span>,
+      <span class="hljs-attr">&quot;totalShipments&quot;</span>: <span class="hljs-string">&quot;integer (int32)&quot;</span>,
+      <span class="hljs-attr">&quot;isAuction&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+      <span class="hljs-attr">&quot;isDutchAuction&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+      <span class="hljs-attr">&quot;isCharitable&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+      <span class="hljs-attr">&quot;isBrokered&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+      <span class="hljs-attr">&quot;isReadyForPickup&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+      <span class="hljs-attr">&quot;distance&quot;</span>: {
+        <span class="hljs-attr">&quot;kilometers&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
+        <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+      },
+      <span class="hljs-attr">&quot;isWatched&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+      <span class="hljs-attr">&quot;hasCarrierQualifications&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+      <span class="hljs-attr">&quot;privateNetwork&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;dateAccepted&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-ListingSummaryModel" class="definition panel" data-traverse-target="definition-ListingSummaryModel">
+            <h2 class="panel-title">
+              <a name="/definitions/ListingSummaryModel"></a>ListingSummaryModel: object
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <span class="json-property-range" title="Value limits"></span>
+              
+              
+              </span> -->
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>A summary listing for /v2/search, as well as a nested summary in other resources</p>
+                </section>
+                <section class="json-schema-properties">
+                  <dl>
+                    <dt data-property-name="listingId" class="has-description">
+                      <span class="json-property-name">listingId:</span>
+                      <span class="json-property-type">integer</span>
+                      <span class="json-property-format">(int32)</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Gets or sets the listing id.</p>
+                    </dd>
+                    <dt data-property-name="title" class="has-description">
+                      <span class="json-property-name">title:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Gets or sets the title.</p>
+                    </dd>
+                    <dt data-property-name="imageUrl" class="has-description">
+                      <span class="json-property-name">imageUrl:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Gets or sets the image URL.</p>
+                    </dd>
+                    <dt data-property-name="isDefaultImage" class="has-description">
+                      <span class="json-property-name">isDefaultImage:</span>
+                      <span class="json-property-type">boolean</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Determines whether the ImageUrl is a URL to a default commodity image.</p>
+                    </dd>
+                    <dt data-property-name="route" class="has-description">
+                      <span class="json-property-name">route:</span>
+                      <span class="json-property-type">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/RouteModel">RouteModel</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Gets or sets the route.</p>
+                    </dd>
+                    <dt data-property-name="expiresOn" class="has-description">
+                      <span class="json-property-name">expiresOn:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-format">(date-time)</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Gets or sets the expires on.</p>
+                    </dd>
+                    <dt data-property-name="commodity" class="has-description">
+                      <span class="json-property-name">commodity:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Gets or sets the commodity.</p>
+                    </dd>
+                    <dt data-property-name="parentCommodity" class="has-description">
+                      <span class="json-property-name">parentCommodity:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Gets or sets the parent commodity.</p>
+                    </dd>
+                    <dt data-property-name="topLevelCommodity" class="has-description">
+                      <span class="json-property-name">topLevelCommodity:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Gets or sets the top level commodity.</p>
+                    </dd>
+                    <dt data-property-name="activeBidsPlaced" class="has-description">
+                      <span class="json-property-name">activeBidsPlaced:</span>
+                      <span class="json-property-type">integer</span>
+                      <span class="json-property-format">(int32)</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Gets or sets the number of active bids.</p>
+                    </dd>
+                    <dt data-property-name="totalBidsPlaced" class="has-description">
+                      <span class="json-property-name">totalBidsPlaced:</span>
+                      <span class="json-property-type">integer</span>
+                      <span class="json-property-format">(int32)</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Gets or sets the total bids placed.</p>
+                    </dd>
+                    <dt data-property-name="totalShipments" class="has-description">
+                      <span class="json-property-name">totalShipments:</span>
+                      <span class="json-property-type">integer</span>
+                      <span class="json-property-format">(int32)</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Gets or sets the total shipments on the listing.</p>
+                    </dd>
+                    <dt data-property-name="isAuction" class="has-description">
+                      <span class="json-property-name">isAuction:</span>
+                      <span class="json-property-type">boolean</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Gets or sets a value indicating whether this instance is auction.</p>
+                    </dd>
+                    <dt data-property-name="isDutchAuction" class="has-description">
+                      <span class="json-property-name">isDutchAuction:</span>
+                      <span class="json-property-type">boolean</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Gets or sets a value indicating whether this instance is a Dutch Auction</p>
+                    </dd>
+                    <dt data-property-name="isCharitable" class="has-description">
+                      <span class="json-property-name">isCharitable:</span>
+                      <span class="json-property-type">boolean</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Gets or sets a value indicating whether this instance is charitable.</p>
+                    </dd>
+                    <dt data-property-name="autoAcceptPrice" class="has-description">
+                      <span class="json-property-name">autoAcceptPrice:</span>
+                      <span class="json-property-type">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/PriceModel">PriceModel</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Gets or sets the auto accept price.</p>
+                    </dd>
+                    <dt data-property-name="namedPrice" class="has-description">
+                      <span class="json-property-name">namedPrice:</span>
+                      <span class="json-property-type">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/PriceModel">PriceModel</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>Gets or sets the named price.</p>
+                    </dd>
+                    <dt data-property-name="offerPrice" class="has-description">
+                      <span class="json-property-name">offerPrice:</span>
+                      <span class="json-property-type">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/PriceModel">PriceModel</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Gets or sets the offer price.</p>
+                    </dd>
+                    <dt data-property-name="auctionTargetPrice" class="has-description">
+                      <span class="json-property-name">auctionTargetPrice:</span>
+                      <span class="json-property-type">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/PriceModel">PriceModel</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Gets or sets the auction target price.</p>
+                    </dd>
+                    <dt data-property-name="lowestBidPrice" class="has-description">
+                      <span class="json-property-name">lowestBidPrice:</span>
+                      <span class="json-property-type">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/PriceModel">PriceModel</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Gets or sets the lowest bid price.</p>
+                    </dd>
+                    <dt data-property-name="isBrokered" class="has-description">
+                      <span class="json-property-name">isBrokered:</span>
+                      <span class="json-property-type">boolean</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Gets or sets a value indicating whether this instance is brokered.</p>
+                    </dd>
+                    <dt data-property-name="isReadyForPickup" class="has-description">
+                      <span class="json-property-name">isReadyForPickup:</span>
+                      <span class="json-property-type">boolean</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>True if the pickup date is on or before today</p>
+                    </dd>
+                    <dt data-property-name="distance" class="has-description">
+                      <span class="json-property-name">distance:</span>
+                      <span class="json-property-type">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/DistanceModel">DistanceModel</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Gets or sets the distance.</p>
+                    </dd>
+                    <dt data-property-name="isWatched" class="has-description">
+                      <span class="json-property-name">isWatched:</span>
+                      <span class="json-property-type">boolean</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Gets or sets a value indicating whether this instance is watched.</p>
+                    </dd>
+                    <dt data-property-name="hasCarrierQualifications" class="has-description">
+                      <span class="json-property-name">hasCarrierQualifications:</span>
+                      <span class="json-property-type">boolean</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Gets or sets a value indicating whether this instance is subject to Carrier Qualifications.</p>
+                    </dd>
+                    <dt data-property-name="privateNetwork" class="has-description">
+                      <span class="json-property-name">privateNetwork:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>The private network in which this listing resides</p>
+                    </dd>
+                    <dt data-property-name="dateAccepted" class="has-description">
+                      <span class="json-property-name">dateAccepted:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-format">(date-time)</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Date a bid was accepted on this listing</p>
+                    </dd>
+                    <dt data-property-name="dateCreated" class="has-description">
+                      <span class="json-property-name">dateCreated:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-format">(date-time)</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Date a listing was created on this listing</p>
+                    </dd>
+                    <dt data-property-name="currentStatus" class="has-description">
+                      <span class="json-property-name">currentStatus:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Current status of listing</p>
+                    </dd>
+                    <dt data-property-name="bookedPrice" class="has-description">
+                      <span class="json-property-name">bookedPrice:</span>
+                      <span class="json-property-type">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/PriceModel">PriceModel</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Price of accepted bid</p>
+                    </dd>
+                    <dt data-property-name="description" class="has-description">
+                      <span class="json-property-name">description:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Description of the listing</p>
+                    </dd>
+                    <dt data-property-name="commodityType">
+                      <span class="json-property-name">commodityType:</span>
+                      <span class="json-property-type">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/EnumModel">EnumModel</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dt data-property-name="parentCommodityType">
+                      <span class="json-property-name">parentCommodityType:</span>
+                      <span class="json-property-type">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/EnumModel">EnumModel</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dt data-property-name="topLevelCommodityType">
+                      <span class="json-property-name">topLevelCommodityType:</span>
+                      <span class="json-property-type">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/EnumModel">EnumModel</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dt data-property-name="isExclusiveListing" class="has-description">
+                      <span class="json-property-name">isExclusiveListing:</span>
+                      <span class="json-property-type">boolean</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>A flag to indicate whether or not a listing is exclusive to any network</p>
+                    </dd>
+                    <dt data-property-name="links" class="has-description">
+                      <span class="json-property-name">links:</span>
+                      <span class="json-property-type">
+                        <span class="json-schema-ref-array">
+                          <a class="json-schema-ref" href="#/definitions/Link">Link</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>The resource&#39;s links</p>
+                    </dd>
+                    <dt class="json-inner-schema">
+                      <section class="json-schema-array-items">
+                        <span class="json-property-type">
+                          <span class="">
+                            <a class="json-schema-ref" href="#/definitions/Link">Link</a>
+                          </span>
+                        </span>
+                        <span class="json-property-range" title="Value limits"></span>
+                        <div class="json-inner-schema"> </div>
+                      </section>
+                    </dt>
+                  </dl>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;listingId&quot;</span>: <span class="hljs-string">&quot;integer (int32)&quot;</span>,
+  <span class="hljs-attr">&quot;title&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;imageUrl&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;isDefaultImage&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+  <span class="hljs-attr">&quot;route&quot;</span>: {
+    <span class="hljs-attr">&quot;distance&quot;</span>: {
+      <span class="hljs-attr">&quot;kilometers&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
+      <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    },
+    <span class="hljs-attr">&quot;items&quot;</span>: [
+      {
+        <span class="hljs-attr">&quot;address&quot;</span>: {
+          <span class="hljs-attr">&quot;streetAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;alternateStreetAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;majorMunicipality&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;postalCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;stateProvince&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;stateProvinceLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;countryLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
+          <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
+          <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;shortLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;type&quot;</span>: {
+            <span class="hljs-attr">&quot;value&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+            <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+            <span class="hljs-attr">&quot;shortLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+          }
+        },
+        <span class="hljs-attr">&quot;contact&quot;</span>: {
+          <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;companyName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;phoneNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;altPhoneNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;firstName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+        },
+        <span class="hljs-attr">&quot;timeFrame&quot;</span>: {
+          <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;shortLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;earliestArrival&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
+          <span class="hljs-attr">&quot;latestArrival&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
+          <span class="hljs-attr">&quot;localEarliestArrival&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
+          <span class="hljs-attr">&quot;localLatestArrival&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
+          <span class="hljs-attr">&quot;timeFrameType&quot;</span>: {
+            <span class="hljs-attr">&quot;value&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+            <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+            <span class="hljs-attr">&quot;shortLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+          },
+          <span class="hljs-attr">&quot;timeZone&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+        },
+        <span class="hljs-attr">&quot;terminal&quot;</span>: {
+          <span class="hljs-attr">&quot;phoneNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;city&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;state&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;postalCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+        },
+        <span class="hljs-attr">&quot;attributes&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+        <span class="hljs-attr">&quot;accessorials&quot;</span>: [
+          {
+            <span class="hljs-attr">&quot;value&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+            <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+            <span class="hljs-attr">&quot;shortLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+          }
+        ]
+      }
+    ]
+  },
+  <span class="hljs-attr">&quot;expiresOn&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
+  <span class="hljs-attr">&quot;commodity&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;parentCommodity&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;topLevelCommodity&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;activeBidsPlaced&quot;</span>: <span class="hljs-string">&quot;integer (int32)&quot;</span>,
+  <span class="hljs-attr">&quot;totalBidsPlaced&quot;</span>: <span class="hljs-string">&quot;integer (int32)&quot;</span>,
+  <span class="hljs-attr">&quot;totalShipments&quot;</span>: <span class="hljs-string">&quot;integer (int32)&quot;</span>,
+  <span class="hljs-attr">&quot;isAuction&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+  <span class="hljs-attr">&quot;isDutchAuction&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+  <span class="hljs-attr">&quot;isCharitable&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+  <span class="hljs-attr">&quot;isBrokered&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+  <span class="hljs-attr">&quot;isReadyForPickup&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+  <span class="hljs-attr">&quot;distance&quot;</span>: {
+    <span class="hljs-attr">&quot;kilometers&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
+    <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  },
+  <span class="hljs-attr">&quot;isWatched&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+  <span class="hljs-attr">&quot;hasCarrierQualifications&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+  <span class="hljs-attr">&quot;privateNetwork&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;dateAccepted&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
+  <span class="hljs-attr">&quot;dateCreated&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
+  <span class="hljs-attr">&quot;currentStatus&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;description&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-Link" class="definition panel" data-traverse-target="definition-Link">
+            <h2 class="panel-title">
+              <a name="/definitions/Link"></a>Link: object
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <span class="json-property-range" title="Value limits"></span>
+              
+              
+              </span> -->
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>A base class for relation links</p>
+                </section>
+                <section class="json-schema-properties">
+                  <dl>
+                    <dt data-property-name="rel" class="has-description">
+                      <span class="json-property-name">rel:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>The relationship between the current resource and the linked resource</p>
+                    </dd>
+                    <dt data-property-name="verb" class="has-description">
+                      <span class="json-property-name">verb:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>GET, PUT, POST, DELETE, HEAD</p>
+                    </dd>
+                    <dt data-property-name="href" class="has-description">
+                      <span class="json-property-name">href:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>The URI of the resource(s)</p>
+                    </dd>
+                    <dt data-property-name="title" class="has-description">
+                      <span class="json-property-name">title:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>The name of the resource; theoretically, this should be the root name of the controller</p>
+                    </dd>
+                  </dl>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;rel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;verb&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;href&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;title&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-EnumModel" class="definition panel" data-traverse-target="definition-EnumModel">
+            <h2 class="panel-title">
+              <a name="/definitions/EnumModel"></a>EnumModel: object
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <span class="json-property-range" title="Value limits"></span>
+              
+              
+              </span> -->
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>Details of an enum that can be translated</p>
+                </section>
+                <section class="json-schema-properties">
+                  <dl>
+                    <dt data-property-name="value" class="has-description">
+                      <span class="json-property-name">value:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>This is a stable value suitable for use in logic.</p>
+                    </dd>
+                    <dt data-property-name="label" class="has-description">
+                      <span class="json-property-name">label:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>This is the full, localized, human-readable form of the value. This is a more verbose version of the ShortLabel. This value should never be used for logic or decisions, because the translated values could be modified at any time in order to clarify meaning, and as a result of a more specific (e.g., idiomatically correct) translation being introduced for users with a specific language preference.</p>
+                    </dd>
+                    <dt data-property-name="shortLabel" class="has-description">
+                      <span class="json-property-name">shortLabel:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>This is the shortened, localized, human-readable form of the value. This is a more terse version of the label. This value should never be used for logic or decisions, because the translated values could be modified at any time in order to clarify meaning, and as a result of a more specific (e.g., idiomatically correct) translation being introduced for users with a specific language preference.</p>
+                    </dd>
+                  </dl>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;value&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;shortLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-DistanceModel" class="definition panel" data-traverse-target="definition-DistanceModel">
+            <h2 class="panel-title">
+              <a name="/definitions/DistanceModel"></a>DistanceModel: object
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <span class="json-property-range" title="Value limits"></span>
+              
+              
+              </span> -->
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>Measurement of a large value used for distance</p>
+                </section>
+                <section class="json-schema-properties">
+                  <dl>
+                    <dt data-property-name="kilometers" class="has-description">
+                      <span class="json-property-name">kilometers:</span>
+                      <span class="json-property-type">number</span>
+                      <span class="json-property-format">(double)</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Raw distance in kilometers</p>
+                    </dd>
+                    <dt data-property-name="label" class="has-description">
+                      <span class="json-property-name">label:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Suggested formatted representation</p>
+                    </dd>
+                    <dt data-property-name="shortLabel" class="has-description">
+                      <span class="json-property-name">shortLabel:</span>
+                      <span class="json-property-type">object</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>shortened, localized, human-readable form of the value represented by the other properties of the class</p>
+                    </dd>
+                  </dl>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;kilometers&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
+  <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-RouteModel" class="definition panel" data-traverse-target="definition-RouteModel">
+            <h2 class="panel-title">
+              <a name="/definitions/RouteModel"></a>RouteModel: object
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <span class="json-property-range" title="Value limits"></span>
+              
+              
+              </span> -->
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>Container for route destinations and other route information</p>
+                </section>
+                <section class="json-schema-properties">
+                  <dl>
+                    <dt data-property-name="distance" class="has-description">
+                      <span class="json-property-name">distance:</span>
+                      <span class="json-property-type">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/DistanceModel">DistanceModel</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Total distance</p>
+                    </dd>
+                    <dt data-property-name="items" class="has-description">
+                      <span class="json-property-name">items:</span>
+                      <span class="json-property-type">
+                        <span class="json-schema-ref-array">
+                          <a class="json-schema-ref" href="#/definitions/RoutePointModel">RoutePointModel</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Ordered list of route destinations</p>
+                    </dd>
+                    <dt class="json-inner-schema">
+                      <section class="json-schema-array-items">
+                        <span class="json-property-type">
+                          <span class="">
+                            <a class="json-schema-ref" href="#/definitions/RoutePointModel">RoutePointModel</a>
+                          </span>
+                        </span>
+                        <span class="json-property-range" title="Value limits"></span>
+                        <div class="json-inner-schema"> </div>
+                      </section>
+                    </dt>
+                  </dl>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;distance&quot;</span>: {
+    <span class="hljs-attr">&quot;kilometers&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
+    <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  },
+  <span class="hljs-attr">&quot;items&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;address&quot;</span>: {
+        <span class="hljs-attr">&quot;streetAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;alternateStreetAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;majorMunicipality&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;postalCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;stateProvince&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;stateProvinceLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;countryLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
+        <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
+        <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;shortLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;type&quot;</span>: {
+          <span class="hljs-attr">&quot;value&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;shortLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+        }
+      },
+      <span class="hljs-attr">&quot;contact&quot;</span>: {
+        <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;companyName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;phoneNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;altPhoneNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;firstName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+      },
+      <span class="hljs-attr">&quot;timeFrame&quot;</span>: {
+        <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;shortLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;earliestArrival&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
+        <span class="hljs-attr">&quot;latestArrival&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
+        <span class="hljs-attr">&quot;localEarliestArrival&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
+        <span class="hljs-attr">&quot;localLatestArrival&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
+        <span class="hljs-attr">&quot;timeFrameType&quot;</span>: {
+          <span class="hljs-attr">&quot;value&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;shortLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+        },
+        <span class="hljs-attr">&quot;timeZone&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+      },
+      <span class="hljs-attr">&quot;terminal&quot;</span>: {
+        <span class="hljs-attr">&quot;phoneNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;city&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;state&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+        <span class="hljs-attr">&quot;postalCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+      },
+      <span class="hljs-attr">&quot;attributes&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+      <span class="hljs-attr">&quot;accessorials&quot;</span>: [
+        {
+          <span class="hljs-attr">&quot;value&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+          <span class="hljs-attr">&quot;shortLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+        }
+      ]
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-RoutePointModel" class="definition panel" data-traverse-target="definition-RoutePointModel">
+            <h2 class="panel-title">
+              <a name="/definitions/RoutePointModel"></a>RoutePointModel: object
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <span class="json-property-range" title="Value limits"></span>
+              
+              
+              </span> -->
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>A single destination of a route</p>
+                </section>
+                <section class="json-schema-properties">
+                  <dl>
+                    <dt data-property-name="address" class="has-description">
+                      <span class="json-property-name">address:</span>
+                      <span class="json-property-type">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/AddressModel">AddressModel</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>the address of the pickup/dropoff location</p>
+                    </dd>
+                    <dt data-property-name="contact" class="has-description">
+                      <span class="json-property-name">contact:</span>
+                      <span class="json-property-type">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/RoutePointContactModel">RoutePointContactModel</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>contract information for the representative(s) responsible for this pickup/dropoff event</p>
+                    </dd>
+                    <dt data-property-name="timeFrame" class="has-description">
+                      <span class="json-property-name">timeFrame:</span>
+                      <span class="json-property-type">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/TimeFrameModel">TimeFrameModel</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>required arrival time window</p>
+                    </dd>
+                    <dt data-property-name="terminal">
+                      <span class="json-property-name">terminal:</span>
+                      <span class="json-property-type">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/TerminalModel">TerminalModel</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dt data-property-name="attributes" class="has-description">
+                      <span class="json-property-name">attributes:</span>
+                      <span class="json-property-type">object</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Attributes associated with a single destination</p>
+                    </dd>
+                    <dt data-property-name="accessorials" class="has-description">
+                      <span class="json-property-name">accessorials:</span>
+                      <span class="json-property-type">
+                        <span class="json-schema-ref-array">
+                          <a class="json-schema-ref" href="#/definitions/EnumModel">EnumModel</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Collection of service accessorials for this route point</p>
+                    </dd>
+                    <dt class="json-inner-schema">
+                      <section class="json-schema-array-items">
+                        <span class="json-property-type">
+                          <span class="">
+                            <a class="json-schema-ref" href="#/definitions/EnumModel">EnumModel</a>
+                          </span>
+                        </span>
+                        <span class="json-property-range" title="Value limits"></span>
+                        <div class="json-inner-schema"> </div>
+                      </section>
+                    </dt>
+                  </dl>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;address&quot;</span>: {
+    <span class="hljs-attr">&quot;streetAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;alternateStreetAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;majorMunicipality&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;postalCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;stateProvince&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;stateProvinceLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;countryLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
+    <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
+    <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;shortLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;type&quot;</span>: {
+      <span class="hljs-attr">&quot;value&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;shortLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    }
+  },
+  <span class="hljs-attr">&quot;contact&quot;</span>: {
+    <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;companyName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;phoneNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;altPhoneNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;firstName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  },
+  <span class="hljs-attr">&quot;timeFrame&quot;</span>: {
+    <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;shortLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;earliestArrival&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
+    <span class="hljs-attr">&quot;latestArrival&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
+    <span class="hljs-attr">&quot;localEarliestArrival&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
+    <span class="hljs-attr">&quot;localLatestArrival&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
+    <span class="hljs-attr">&quot;timeFrameType&quot;</span>: {
+      <span class="hljs-attr">&quot;value&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;shortLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    },
+    <span class="hljs-attr">&quot;timeZone&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  },
+  <span class="hljs-attr">&quot;terminal&quot;</span>: {
+    <span class="hljs-attr">&quot;phoneNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;city&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;state&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;postalCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  },
+  <span class="hljs-attr">&quot;attributes&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+  <span class="hljs-attr">&quot;accessorials&quot;</span>: [
+    {
+      <span class="hljs-attr">&quot;value&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+      <span class="hljs-attr">&quot;shortLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+    }
+  ]
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-AddressModel" class="definition panel" data-traverse-target="definition-AddressModel">
+            <h2 class="panel-title">
+              <a name="/definitions/AddressModel"></a>AddressModel: object
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <span class="json-property-range" title="Value limits"></span>
+              
+              
+              </span> -->
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>Details of an address and recommended formatting</p>
+                </section>
+                <section class="json-schema-properties">
+                  <dl>
+                    <dt data-property-name="streetAddress" class="has-description">
+                      <span class="json-property-name">streetAddress:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Primary street address</p>
+                    </dd>
+                    <dt data-property-name="alternateStreetAddress" class="has-description">
+                      <span class="json-property-name">alternateStreetAddress:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Secondary street address</p>
+                    </dd>
+                    <dt data-property-name="majorMunicipality" class="has-description">
+                      <span class="json-property-name">majorMunicipality:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>The city or minor governing body</p>
+                    </dd>
+                    <dt data-property-name="postalCode" class="has-description">
+                      <span class="json-property-name">postalCode:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Postal code</p>
+                    </dd>
+                    <dt data-property-name="stateProvince" class="has-description">
+                      <span class="json-property-name">stateProvince:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>State or governing province code</p>
+                    </dd>
+                    <dt data-property-name="stateProvinceLabel" class="has-description">
+                      <span class="json-property-name">stateProvinceLabel:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>State or governing province</p>
+                    </dd>
+                    <dt data-property-name="country" class="has-description">
+                      <span class="json-property-name">country:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Country code</p>
+                    </dd>
+                    <dt data-property-name="countryLabel" class="has-description">
+                      <span class="json-property-name">countryLabel:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Country</p>
+                    </dd>
+                    <dt data-property-name="latitude" class="has-description">
+                      <span class="json-property-name">latitude:</span>
+                      <span class="json-property-type">number</span>
+                      <span class="json-property-format">(double)</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Geographical latitude</p>
+                    </dd>
+                    <dt data-property-name="longitude" class="has-description">
+                      <span class="json-property-name">longitude:</span>
+                      <span class="json-property-type">number</span>
+                      <span class="json-property-format">(double)</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Geographical longitude</p>
+                    </dd>
+                    <dt data-property-name="label" class="has-description">
+                      <span class="json-property-name">label:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Recommended formatting</p>
+                    </dd>
+                    <dt data-property-name="shortLabel" class="has-description">
+                      <span class="json-property-name">shortLabel:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>shortened, localized, human-readable form of the value represented by the other properties of the class</p>
+                    </dd>
+                    <dt data-property-name="type" class="has-description">
+                      <span class="json-property-name">type:</span>
+                      <span class="json-property-type">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/EnumModel">EnumModel</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Location description</p>
+                    </dd>
+                  </dl>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;streetAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;alternateStreetAddress&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;majorMunicipality&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;postalCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;stateProvince&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;stateProvinceLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;country&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;countryLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;latitude&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
+  <span class="hljs-attr">&quot;longitude&quot;</span>: <span class="hljs-string">&quot;number (double)&quot;</span>,
+  <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;shortLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;type&quot;</span>: {
+    <span class="hljs-attr">&quot;value&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;shortLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  }
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-RoutePointContactModel" class="definition panel" data-traverse-target="definition-RoutePointContactModel">
+            <h2 class="panel-title">
+              <a name="/definitions/RoutePointContactModel"></a>RoutePointContactModel: object
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <span class="json-property-range" title="Value limits"></span>
+              
+              
+              </span> -->
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>Shipper contact information for the route point</p>
+                </section>
+                <section class="json-schema-properties">
+                  <dl>
+                    <dt data-property-name="name">
+                      <span class="json-property-name">name:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-range" title="String length limits"> (up to 50 chars) </span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt data-property-name="companyName">
+                      <span class="json-property-name">companyName:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dt data-property-name="phoneNumber">
+                      <span class="json-property-name">phoneNumber:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-range" title="String length limits"> (up to 20 chars) </span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt data-property-name="altPhoneNumber">
+                      <span class="json-property-name">altPhoneNumber:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-range" title="String length limits"> (up to 20 chars) </span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dt data-property-name="email">
+                      <span class="json-property-name">email:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dt data-property-name="firstName">
+                      <span class="json-property-name">firstName:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dt data-property-name="lastName">
+                      <span class="json-property-name">lastName:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                  </dl>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;name&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;companyName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;phoneNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;altPhoneNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;email&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;firstName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;lastName&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-TimeFrameModel" class="definition panel" data-traverse-target="definition-TimeFrameModel">
+            <h2 class="panel-title">
+              <a name="/definitions/TimeFrameModel"></a>TimeFrameModel: object
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <span class="json-property-range" title="Value limits"></span>
+              
+              
+              </span> -->
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>The details of a time frame and recommended display</p>
+                </section>
+                <section class="json-schema-properties">
+                  <dl>
+                    <dt data-property-name="label" class="has-description">
+                      <span class="json-property-name">label:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Suggested formatted representation</p>
+                    </dd>
+                    <dt data-property-name="shortLabel" class="has-description">
+                      <span class="json-property-name">shortLabel:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>shortened, localized, human-readable form of the value represented by the other properties of the class</p>
+                    </dd>
+                    <dt data-property-name="earliestArrival" class="has-description">
+                      <span class="json-property-name">earliestArrival:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-format">(date-time)</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Earliest range for arrival for pickup or dropoff</p>
+                    </dd>
+                    <dt data-property-name="latestArrival" class="has-description">
+                      <span class="json-property-name">latestArrival:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-format">(date-time)</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Latest range for arrival for pickup or dropoff</p>
+                    </dd>
+                    <dt data-property-name="localEarliestArrival" class="has-description">
+                      <span class="json-property-name">localEarliestArrival:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-format">(date-time)</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>Earliest range for arrival for pickup or dropoff with Timezone offset</p>
+                    </dd>
+                    <dt data-property-name="localLatestArrival" class="has-description">
+                      <span class="json-property-name">localLatestArrival:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-format">(date-time)</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>Latest range for arrival for pickup or dropoff with Timezone offset</p>
+                    </dd>
+                    <dt data-property-name="timeFrameType" class="has-description">
+                      <span class="json-property-name">timeFrameType:</span>
+                      <span class="json-property-type">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/EnumModel">EnumModel</a>
+                        </span>
+                      </span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>{uShip.Enums.ListingTimeFrameType}</p>
+                    </dd>
+                    <dt data-property-name="timeZone" class="has-description">
+                      <span class="json-property-name">timeZone:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>Specifies the Time Zone in the Zone Info (Olson, TzIdentifier) format</p>
+                    </dd>
+                  </dl>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;shortLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;earliestArrival&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
+  <span class="hljs-attr">&quot;latestArrival&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
+  <span class="hljs-attr">&quot;localEarliestArrival&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
+  <span class="hljs-attr">&quot;localLatestArrival&quot;</span>: <span class="hljs-string">&quot;string (date-time)&quot;</span>,
+  <span class="hljs-attr">&quot;timeFrameType&quot;</span>: {
+    <span class="hljs-attr">&quot;value&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+    <span class="hljs-attr">&quot;shortLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+  },
+  <span class="hljs-attr">&quot;timeZone&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-TerminalModel" class="definition panel" data-traverse-target="definition-TerminalModel">
+            <h2 class="panel-title">
+              <a name="/definitions/TerminalModel"></a>TerminalModel: object
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <span class="json-property-range" title="Value limits"></span>
+              
+              
+              </span> -->
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-description">
+                  <p>A model for freight terminals</p>
+                </section>
+                <section class="json-schema-properties">
+                  <dl>
+                    <dt data-property-name="phoneNumber" class="has-description">
+                      <span class="json-property-name">phoneNumber:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>The phone number for the terminal</p>
+                    </dd>
+                    <dt data-property-name="city" class="has-description">
+                      <span class="json-property-name">city:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>The city the terminal is located in</p>
+                    </dd>
+                    <dt data-property-name="state" class="has-description">
+                      <span class="json-property-name">state:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>The state the terminal is located in</p>
+                    </dd>
+                    <dt data-property-name="postalCode" class="has-description">
+                      <span class="json-property-name">postalCode:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>The postal code of the terminal</p>
+                    </dd>
+                  </dl>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;phoneNumber&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;city&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;state&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;postalCode&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-FormattedAttributeModel" class="definition panel" data-traverse-target="definition-FormattedAttributeModel">
+            <h2 class="panel-title">
+              <a name="/definitions/FormattedAttributeModel"></a>FormattedAttributeModel: object
+              <!-- <span class="json-property-type"><span class="json-property-type">object</span>
+              <span class="json-property-range" title="Value limits"></span>
+              
+              
+              </span> -->
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-properties">
+                  <dl>
+                    <dt data-property-name="title">
+                      <span class="json-property-name">title:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dt data-property-name="value">
+                      <span class="json-property-name">value:</span>
+                      <span class="json-property-type">object</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dt data-property-name="label">
+                      <span class="json-property-name">label:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dt data-property-name="shortLabel" class="has-description">
+                      <span class="json-property-name">shortLabel:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                    </dt>
+                    <dd>
+                      <p>shortened, localized, human-readable form of the value represented by the other properties of the class</p>
+                    </dd>
+                  </dl>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <!-- <div class="hljs"> -->
+                  <html>
+                  <head></head>
+                  <body><pre><code class="hljs language-json">{
+  <span class="hljs-attr">&quot;title&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;value&quot;</span>: <span class="hljs-string">&quot;object&quot;</span>,
+  <span class="hljs-attr">&quot;label&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>,
+  <span class="hljs-attr">&quot;shortLabel&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+</code></pre> </body>
+                  </html>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
+          <div class="doc-row no-margin">
+            <div class="doc-copy doc-separator">
+              <a class="powered-by" href="https://sourcey.com/spectacle">Documentation by
+                <span>Spectacle</span>
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </body>
+</html>
